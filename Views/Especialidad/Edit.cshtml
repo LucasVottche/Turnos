@@ -1,0 +1,18 @@
+﻿@model Turnos.Models.Especialidad
+
+<h4>Especialidad</h4>
+<div>
+    <!-- //aca agregarmos formulario y el action , vamos a enviar los datos del formulario
+     al metodo Edit y va a resolverlo para editar la especidad y retornar a la vista-->
+    <form asp-action="Edit">
+        <!--//esto validar los elementos html que tengamos en nuestro formulario , si el valor esta vacio en
+        input en html etc...-->
+        <div asp-validation-summary="ModelOnly"></div>
+        <!--//desde la vista index  llamamos al controlador ejecutando el metodo edit y le pasamos parametro entonces el metodo edit es obtener esa especialidad con el ID.-->
+        <input type="hidden" asp-for="idEspecialidad"/>
+        <div>
+            <label asp-for="Descripcion"></label>
+            <input asp-for="Descripcion"/>
+        </div>
+    </form>
+</div>

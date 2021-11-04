@@ -1,0 +1,35 @@
+﻿
+@model IEnumerable<Turnos.Models.Especialidad>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Especialidad</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                    @*lo que hace es escribir aca el nombre real del campo se lo enviamos con el operador lamda*@
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        <!--//aca le estamos diciendo que ejecute el metodo Edit-->
+                        <a asp-action="Edit" asp-route-id="@item.idEspecialidad">Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
